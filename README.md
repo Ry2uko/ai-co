@@ -1,4 +1,4 @@
-# Ai&Co. Coffe and Bean
+# Ai&Co. Coffee and Bean
 
 At Ai&Co. Coffee and Bean, our story is brewed from a love for coffee and a passion for creating spaces where people can come together. 
 Our journey begain with a simple idea and a deep appreciation for the art of coffee. Founded in 2023, Ai&Co. 

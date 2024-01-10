@@ -211,7 +211,7 @@ body, html {
   color: #fff;
 }
 
-section:not(#home) h2.section-heading {
+section:not(#home-section) h2.section-heading {
   text-transform: uppercase;
   text-align: center;
   color: #fff;
@@ -219,18 +219,18 @@ section:not(#home) h2.section-heading {
   font-size: 3rem;
   word-spacing: 5px;
 }
-section:not(#home) h2.section-heading .highlight {
+section:not(#home-section) h2.section-heading .highlight {
   color: #da7012;
 }
 
-section:not(#home):not(#about) {
+section:not(#home-section):not(#about) {
   padding: 2rem 0 4rem;
 }
-section:not(#home):not(#about) h2.section-heading {
+section:not(#home-section):not(#about) h2.section-heading {
   margin-bottom: 1.5rem;
 }
 
-#home {
+#home-section {
   flex: 1;
   width: 100%;
   display: flex;
@@ -238,27 +238,27 @@ section:not(#home):not(#about) h2.section-heading {
   justify-content: center;
   background-color: rgba(0, 0, 0, 0);
 }
-#home .content {
+#home-section .content {
   margin: 0 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#home .content h3.slogan {
+#home-section .content h3.slogan {
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
   font-size: 4rem;
   text-transform: uppercase;
   color: #fff;
 }
-#home .content p.slogan-text {
+#home-section .content p.slogan-text {
   text-align: center;
   font-family: "Noto Sans", sans-serif;
   font-size: 1.4rem;
   color: #e7e7e7;
   padding: 15px 0;
 }
-#home .content a.home-btn {
+#home-section .content a.home-btn {
   font-family: "Noto Sans", sans-serif;
   font-size: 1.4rem;
   color: #000;
@@ -576,22 +576,22 @@ section:not(#home):not(#about) h2.section-heading {
   #header .site-header .buttons-container button#toggleNavbar {
     display: none;
   }
-  #home {
+  #home-section {
     height: 100vh;
     justify-content: flex-start;
   }
-  #home .content {
+  #home-section .content {
     margin: 0 4rem;
     align-items: flex-start;
     max-width: 500px;
   }
-  #home .content h3.slogan {
+  #home-section .content h3.slogan {
     text-align: start;
   }
-  #home .content p.slogan-text {
+  #home-section .content p.slogan-text {
     text-align: justify;
   }
-  #home .content a.home-btn {
+  #home-section .content a.home-btn {
     margin: 15px 0;
   }
   #products .products-container {

@@ -235,7 +235,7 @@ body, html
             background-color: $bg-coffee-dark
             color: #fff
 
-section:not(#home)
+section:not(#home-section)
     h2.section-heading
         text-transform: uppercase
         text-align: center
@@ -249,13 +249,13 @@ section:not(#home)
             color: $bg-coffee-light
 
 
-section:not(#home):not(#about)
+section:not(#home-section):not(#about)
     padding: 2rem 0 4rem
 
     h2.section-heading
         margin-bottom: 1.5rem
 
-#home
+#home-section
     flex: 1
     width: 100%
     display: flex
@@ -618,7 +618,7 @@ section:not(#home):not(#about)
                 button#toggleNavbar
                     display: none
 
-    #home
+    #home-section
         height: 100vh
         justify-content: flex-start
 

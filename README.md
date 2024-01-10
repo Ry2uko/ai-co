@@ -11,5 +11,6 @@ welcoming atmosphere.
 ![snapshot 3](./static/snapshot3.png)
 ![snapshot 4](./static/snapshot4.png)
 ![snapshot 5](./static/snapshot5.png)
+![snapshot 6](./static/snapshot6.png)
 
 A Performance Task in ICT By Group 3 | All Rights Reserved.

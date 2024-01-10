@@ -8,52 +8,54 @@
         <link rel="icon" type="image/x-icon" href="./static/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nanum+Pen+Script&family=Noto+Sans:wght@400;700&family=Engelbert&display=swap" rel="stylesheet" /> 
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Bebas+Neue&family=Nanum+Pen+Script&family=Noto+Sans:wght@400;700&family=Engelbert&family=Yanone+Kaffeesatz:wght@400;700&display=swap" rel="stylesheet" /> 
         <link rel="stylesheet" href="css/styles.css" type="text/css" /> 
         <script src="https://kit.fontawesome.com/b40850cb13.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="parent-container">
-            <header id="header">
-                <div class="site-header">
-                    <div class="logo-container">
-                        <img class="logo" src="./static/img/logo.png" />
+            <div class="header-home-img-container">
+                <header id="header">
+                    <div class="site-header">
+                        <div class="logo-container">
+                            <img class="logo" src="./static/img/logo.png" />
+                        </div>
+                        <nav class="navbar">
+                            <a href="#home" class="navbar-link">Home</a>
+                            <a href="#about" class="navbar-link">About</a>
+                            <a href="#products" class="navbar-link">Products</a>
+                            <a href="#reviews" class="navbar-link">Reviews</a>
+                            <a href="#contact" class="navbar-link">Contact</a>
+                        </nav>
+                        <div class="buttons-container">
+                            <button type="button" class="button-link">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <button type="button" class="button-link">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                            <button type="button" class="button-link" id="toggleNavbar">
+                                <i class="fa-solid fa-bars"></i>
+                            </button>
+                        </div>
                     </div>
-                    <nav class="navbar">
-                        <a href="#home" class="navbar-link">Home</a>
+                    <nav class="navbar-responsive">
+                        <a href="#home" class="navbar-link pad-top">Home</a>
                         <a href="#about" class="navbar-link">About</a>
                         <a href="#products" class="navbar-link">Products</a>
                         <a href="#reviews" class="navbar-link">Reviews</a>
-                        <a href="#contact" class="navbar-link">Contact</a>
+                        <a href="#contact" class="navbar-link pad-bottom">Contact</a>
                     </nav>
-                    <div class="buttons-container">
-                        <button type="button" class="button-link">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                        <button type="button" class="button-link">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </button>
-                        <button type="button" class="button-link" id="toggleNavbar">
-                            <i class="fa-solid fa-bars"></i>
-                        </button>
-                    </div>
-                </div>
-                <nav class="navbar-responsive">
-                    <a href="#home" class="navbar-link pad-top">Home</a>
-                    <a href="#about" class="navbar-link">About</a>
-                    <a href="#products" class="navbar-link">Products</a>
-                    <a href="#reviews" class="navbar-link">Reviews</a>
-                    <a href="#contact" class="navbar-link pad-bottom">Contact</a>
-                </nav>
-            </header>
-            <main id="main">
-                <section id="home">
+                </header>
+                <div id="home">
                     <div class="content">
                         <h3 class="slogan">Fueling Your Day with Freshness</h3>
                         <p class="slogan-text">Indulge in the finest coffee experience with us. From carefully selected beans to the perfect brew, we ensure every cup is a delight.</p>
-                        <a  href="#products" class="home-btn">Explore Our Blends</a>
+                        <a href="#about" class="home-btn">About Us</a>
                     </div>
-                </section>
+                </div>
+            </div>
+            <main id="main">
                 <section id="about">
                     <h2 class="section-heading">
                         <span class="highlight">About</span> Us
@@ -102,7 +104,7 @@
                                 <img src="./static/img/coffee-product-1.png" class="img-1"/>
                             </div>
                             <div class="product-info-container">
-                                <span class="product-name">Fresh Brewed Coffee</span>
+                                <span class="product-name">Coffee</span>
                                 <div class="stars-rating">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -132,7 +134,7 @@
                                 <img src="./static/img/coffee-product-2.png" class="img-2"/>
                             </div>
                             <div class="product-info-container">
-                                <span class="product-name">Non Coffee Drinks (Frappe)</span>
+                                <span class="product-name">Frappe</span>
                                 <div class="stars-rating">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -162,7 +164,7 @@
                                 <img src="./static/img/coffee-product-3.png" class="img-3"/>
                             </div>
                             <div class="product-info-container">
-                                <span class="product-name">Fresh Baked Pastry</span>
+                                <span class="product-name">Croissant</span>
                                 <div class="stars-rating">
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -254,6 +256,20 @@
                 </section>
                 <section id="contact">
                     <h2 class="section-heading"><span class="highlight">Contact</span> Us</h2>
+                    <div class="contact-information-container">
+                        <div class="information-group">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span class="information-text">Makati City, Philippines</span>
+                        </div>
+                        <div class="information-group">
+                            <i class="fa-solid fa-phone"></i>
+                            <span class="information-text">+63 912 345 6789</span>
+                        </div>
+                        <div class="information-group">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span class="information-text">ai&co@gmail.com</span>
+                        </div>
+                    </div>
                     <div class="contact-container">
                         <div class="maps-container">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1822.5166076835362!2d121.01997363547142!3d14.55469557809655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9ffe127834d%3A0x5fbd682d928e38e7!2sPanco%20Cafe!5e0!3m2!1sen!2sph!4v1704739693803!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -291,19 +307,19 @@
             </main>
             <footer id="footer">
                 <div class="socials-links-container">
-                    <a href="javascript:void(0)" class="socials-link">
+                    <a href="https://www.facebook.com/profile.php?id=61555088837607&mibextid=AEUHqQ" class="socials-link" target="_blank" >
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a href="javascript:void(0)" class="socials-link">
+                    <a href="https://www.youtube.com/@AiAndCo" class="socials-link" target="_blank" >
                         <i class="fa-brands fa-youtube"></i>
                     </a>
-                    <a href="javascript:void(0)" class="socials-link">
+                    <a href="https://www.instagram.com/luv_ai_co?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="socials-link" target="_blank" >
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="javascript:void(0)" class="socials-link">
-                        <i class="fa-brands fa-twitter"></i>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="socials-link" target="_blank" >
+                        <i class="fa-brands fa-x-twitter"></i>
                     </a>
-                    <a href="javascript:void(0)" class="socials-link">
+                    <a href="https://www.linkedin.com/in/ai-co-39a2b62a9/" class="socials-link" target="_blank" >
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </div>

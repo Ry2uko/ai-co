@@ -2,10 +2,13 @@ $ff-bebas-neue: 'Bebas Neue', sans-serif
 $ff-noto-sans: 'Noto Sans', sans-serif
 $ff-nanum-pen-script: 'Nanum Pen Script', cursive
 $ff-engelbert: 'Engelbert', cursive
+$ff-yanone-kaffeesatz: 'Yanone Kaffeesatz', sans-serif
+$ff-lato: 'Lato', sans-serif
 
 $text-coffee: #964315
 $bg-coffee-light: #da7012
 $bg-coffee: #8b4920
+$bg-main: #060302
 
 $bg-coffee-dark: #6A2B05
 $bg-coffee-darker: #3E1404
@@ -13,13 +16,12 @@ $bg-coffee-black: #291F15
 $bg-coffee-highlight: #f6b000
 $bg-ui-brown: #120c056c
 
+$border-brown: #ff8800f5
 $border-black: #373938
 $white: #e7e7e7
 
 $logo-width-sm: 80px
 $logo-width-lg: 100px
-$header-height-sm: 105px
-$header-height-lg: 125px
 
 @keyframes rainbow
     100%,0%
@@ -66,14 +68,24 @@ body, html
     width: 100%
     height: 100vh
     overflow-x: hidden
-    background-color: #000
+    background-color: $bg-main
     scroll-behavior: smooth
+
+.header-home-img-container
+    $bg-opacity: 0.7
+    background: linear-gradient(rgba(0, 0, 0, $bg-opacity), rgba(0, 0, 0, $bg-opacity)), url('../static/img/coffee.jpg') no-repeat
+    background-size: cover
+    background-position: center
+    height: 100vh
+    display: flex
+    flex-direction: column
+
 
 #header
     .site-header 
         display: flex
         align-items: center
-        border-bottom: 1px solid #1f1f1f
+        width: 100%
         padding: 10px 30px
         max-height: 145px
 
@@ -94,27 +106,41 @@ body, html
                 size: 1.3rem
         
             a.navbar-link   
-                margin: 0 16px 
+                margin: 0 20px 
+                color: #fff
+                text-decoration: none
+                display: inline-block
+                position: relative
+
+                &::after
+                    content: ''
+                    position: absolute
+                    width: 100%
+                    transform: scaleX(0)
+                    height: 4px
+                    bottom: -8px
+                    left: 0
+                    background-color: $bg-coffee
+                    transform-origin: bottom right
+                    transition: transform 0.25s ease-out
+
+                &:hover::after
+                    transform: scaleX(1)
+                    transform-origin: bottom left
+
+        .buttons-container
+            button.button-link
+                border: none
+                background-color: rgba(0,0,0,0)
+                cursor: pointer
+                margin: 0 18px
+                font-size: 1.55rem
                 color: $white
                 text-decoration: none
                 transition: ease-out 0.1s color
 
                 &:hover
                     color: $text-coffee
-
-        .buttons-container
-        button.button-link
-            border: none
-            background-color: rgba(0,0,0,0)
-            cursor: pointer
-            margin: 0 18px
-            font-size: 1.55rem
-            color: $white
-            text-decoration: none
-            transition: ease-out 0.1s color
-
-            &:hover
-                color: $text-coffee
 
 #footer
     display: flex
@@ -139,7 +165,7 @@ body, html
             border-radius: 0.3rem
 
             &:hover
-                background-color: $bg-coffee
+                background-color: $bg-coffee-highlight
                 color: #060606
 
     .footer-navbar
@@ -165,8 +191,8 @@ body, html
             transition: ease-out 0.1s border, ease-out 0.1s color
 
             &:hover
-                color: $text-coffee
-                border: 1px solid $text-coffee
+                color: $bg-coffee-highlight
+                border: 1px solid $bg-coffee-highlight
 
     .credits-container
         text-align: center
@@ -180,7 +206,6 @@ body, html
             font-weight: bold
             animation: rainbow 5s linear
             animation-iteration-count: infinite
-		
 
 .navbar-responsive
     background: #fff
@@ -210,15 +235,33 @@ body, html
             background-color: $bg-coffee-dark
             color: #fff
 
+section:not(#home)
+    h2.section-heading
+        text-transform: uppercase
+        text-align: center
+        color: #fff
+        font:
+            family: $ff-yanone-kaffeesatz
+            size: 3rem
+        word-spacing: 5px
+
+        .highlight
+            color: $bg-coffee-light
+
+
+section:not(#home):not(#about)
+    padding: 2rem 0 4rem
+
+    h2.section-heading
+        margin-bottom: 1.5rem
+
 #home
-    height: calc(100vh - $header-height-sm)
+    flex: 1
     width: 100%
     display: flex
     align-items: center
     justify-content: center
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../static/img/coffee.jpg') no-repeat
-    background-size: cover
-    background-position: center
+    background-color: rgba(0,0,0,0)
 
     .content
         margin: 0 3rem
@@ -251,24 +294,9 @@ body, html
             border: none
             text-decoration: none
             border-radius: 0.2rem
-            padding: 7px 45px
+            padding: 10px 35px
             margin: 30px 0
             cursor: pointer
-
-section:not(#home):not(#about)
-    padding: 2rem 0
-
-    h2.section-heading
-        text-transform: uppercase
-        text-align: center
-        color: #fff
-        font:
-            family: $ff-bebas-neue
-            size: 3rem
-        margin-bottom: 1rem
-
-        .highlight
-            color: $bg-coffee-light
 
 #about
     display: flex
@@ -276,55 +304,43 @@ section:not(#home):not(#about)
     flex-direction: column
     padding: 3rem 0
 
-    h2.section-heading
-        text-transform: uppercase
-        text-align: center
-        color: #fff
-        font:
-            family: $ff-bebas-neue
-            size: 3rem
-
-        .highlight
-            color: $bg-coffee-light
+    .info-container:not(:last-child)
+        margin-top: 2rem
 
     .info-container
-        background-color: $bg-ui-brown
         display: flex
         flex-direction: column
         border-radius: 0.25rem
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
-        width: 85%
-        max-width: 850px
-        border: 1px solid #1d1d1d
-        margin-top: 3rem
+        width: 80%
+        max-width: 720px
+        margin-top: 4rem
 
         .info-group
-            margin-top: 2rem
+            margin-top: 3rem
 
             h3.info-heading
                 text-align: center
                 color: #fff
                 margin-bottom: 1rem
                 font:
-                    family: $ff-noto-sans   
-                    weight: bold
-                    size: 2.2rem
+                    family: $ff-yanone-kaffeesatz
+                    weight: normal
+                    size: 3rem
 
             p.info-text
                 color: $white
                 text-align: justify
-                padding: 0 30px 25px 30px
                 line-height: 35px
                 font:
-                    family: $ff-noto-sans
-                    size: 1.3rem
+                    family: $ff-lato
+                    size: 1.4rem
 
         .info-img-container
             width: 100%
 
             img
-                border-top-left-radius: 0.3rem
-                border-top-right-radius: 0.3rem
+                border-radius: 0.3rem
                 width: 100%
                 height: 100%
                 opacity: 0.9
@@ -478,12 +494,44 @@ section:not(#home):not(#about)
     display: flex
     flex-direction: column
     align-items: center
+    padding: 2rem 0 !important
     
+    .contact-information-container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        margin-bottom: 2.5rem
+
+        .information-group
+            width: 350px
+            margin: 7px 0
+            color: $white
+
+            i 
+                padding: 15px 17px
+                border: 1px solid $border-black
+                border-radius: 50%
+                font-size: 1.5rem
+                cursor: pointer
+                transition: ease-out 0.1s color, ease-out 0.1s border-color
+
+                &:hover
+                    border-color: $bg-coffee-highlight
+                    color: $bg-coffee-highlight
+                    + .information-text
+                        color: $bg-coffee-highlight !important
+
+            .information-text
+                margin-left: 10px
+                font:
+                    family: $ff-lato
+                    size: 1.7rem
 
     .contact-container
         width: 80%
         max-width: 800px
-        background-color: $bg-ui-brown
+        border: 1px solid $border-black
         border-radius: 0.25rem
 
         .maps-container
@@ -559,16 +607,19 @@ section:not(#home):not(#about)
                 img.logo
                     width: $logo-width-lg
                     height: $logo-width-lg
-
+            
             .navbar
                 display: flex
-        
+                
+                a.navbar-link
+                    margin: 0 20px
+
             .buttons-container
                 button#toggleNavbar
                     display: none
 
     #home
-        height: calc(100vh - $header-height-lg)
+        height: 100vh
         justify-content: flex-start
 
         .content
@@ -582,9 +633,8 @@ section:not(#home):not(#about)
             p.slogan-text
                 text-align: justify
 
-            button.home-btn
-                margin: 20px 0
-                padding: 8px 25px
+            a.home-btn
+                margin: 15px 0
 
     #products
         .products-container
@@ -633,6 +683,7 @@ section:not(#home):not(#about)
             margin-left: 15px
             flex: 1
             padding: 30px 0
+
             form
                 display: flex
                 flex-direction: column
@@ -654,9 +705,6 @@ section:not(#home):not(#about)
             .navbar
                 font-size: 1.35rem
 
-                a.navbar-link
-                    margin: 0 25px
-
             .buttons-container
                 button.button-link
                     font-size: 1.7rem
@@ -665,25 +713,29 @@ section:not(#home):not(#about)
             margin-bottom: 2rem       
     
     #about
+        min-height: 100vh
+
         .info-container
             flex-direction: row
-            width: 90%
-            max-width: 1500px
+            width: 92%
+            max-width: 1400px
             height: 400px
-            margin-top: 2rem
-
-            &.last
-                margin-top: 4rem
+            height: auto
+            margin-top: 3rem !important
 
             .info-group
-                overflow-y: auto
+                display: flex
+                flex-direction: column
+                justify-content: center
+                margin-top: 0
+                margin-left: 15px
 
                 h3.info-heading
-                    font-size: 2rem
-                    margin-bottom: 10px
+                    font-size: 2.6rem
+                    margin-bottom: 0.9rem
 
                 p.info-text
-                    font-size: 1.2rem
+                    font-size: 1.4rem
                     padding: 0 50px 20px 50px
 
             .info-img-container
@@ -692,10 +744,8 @@ section:not(#home):not(#about)
                 align-items: center
 
                 img
-                    border-top-right-radius: 0
-                    border-bottom-left-radius: 0.3rem
-                    width: 600px
-                    height: 400px
+                    width: 500px
+                    height: 333px
 
     #products
         .products-container
@@ -749,4 +799,19 @@ section:not(#home):not(#about)
     
     #contact
         padding-bottom: 4rem
+            
+@media screen and (min-width: 1400px)
+    #about
+        .info-container
+            margin-top: 6rem
+            margin-bottom: 2rem
+
+            .info-group
+                p.info-text
+                    font-size: 1.4rem
+                
+            .info-img-container
+                img
+                    width: 600px
+                    height: 400px
             

@@ -11,3 +11,12 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   });
 });
+
+// Performance Task in ICT (Group 3) :D
+/* Members:
+- AirishAnne Cabrera
+- Aizen Petate
+- Gabriel Fradejas
+- Ken Cedrick Hernandez
+- Khryzel Maala
+*/
